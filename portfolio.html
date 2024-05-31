@@ -130,6 +130,135 @@
         display: flex;
         flex-direction: row;
     }
+    #live-projects, #github-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual project card styling */
+.project-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+    width: 300px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Image styling */
+.project-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Project name styling */
+.project-card h3 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+/* Description styling */
+.project-card p {
+    padding: 0 1em;
+    font-size: 1em;
+    color: #666;
+}
+
+/* Link styling */
+.project-card a {
+    display: inline-block;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.project-card a:hover {
+    background-color: #0056b3;
+}
+
+/* Container for company details */
+#companies {
+    padding: 20px;
+}
+
+/* Individual company div styling */
+.company-div {
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Logo styling */
+.company-logo {
+    max-width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Company name styling */
+.company-div h3 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+/* Description styling */
+.company-div p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Role styling */
+.company-div .role {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+        /* Add the CSS style here */
+        #companies {
+            padding: 20px;
+        }
+
+        .company-div {
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .company-logo {
+            max-width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .company-div h3 {
+            font-size: 1.5em;
+            margin: 0.5em 0;
+        }
+
+        .company-div p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .company-div .role {
+            font-weight: bold;
+            margin-top: 1em;
+        }
 
 </style>
 <body>
@@ -151,7 +280,7 @@
                     <a class="nav-link" id="aboutLink"href="#about"><span style="color: white !important;">About Me</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="projectsLink" href="#"><span style="color: white !important;">Projects</span></a>
+                    <a class="nav-link" id="projectsLink" href="#projects"><span style="color: white !important;">Projects</span></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link"id="companiesLink" href="#"><span style="color: white !important;">Companies</span></a>
@@ -222,6 +351,20 @@
                    <p> Eager to contribute and collaborate, I'm excited about the opportunity to leverage my skills to drive innovation and deliver exceptional results. Let's connect and explore the possibilities together.</p>
             </div>
     </div>
+
+    <div id="projects" style="color: white;;">
+        <h2>Projects</h2>
+    <h6>Live Real time Projects</h6>
+    <div id="live-projects">
+        
+    </div>
+    <h6>Projects on GitHub</h6>
+    <div id="github-projects">
+        
+    </div>
+</div>
+
+<div id="companies"></div>
 </body>
 <script>
     function typeJobPositions(jobPositions) {
@@ -329,4 +472,106 @@
     // Call the function with example data
     createTechStack(techStackData);
     </script>
+
+
+<script>
+    function createProjectCards(projects, containerId) {
+        const container = document.getElementById(containerId);
+    
+        projects.forEach(project => {
+            const projectName = project.name;
+            const imageSrc = project.image;
+            const description = project.description;
+            const link = project.link;
+    
+            const projectCard = document.createElement('div');
+            projectCard.classList.add('project-card');
+    
+            const image = document.createElement('img');
+            image.src = imageSrc;
+            projectCard.appendChild(image);
+    
+            const projectNameElement = document.createElement('h3');
+            projectNameElement.textContent = projectName;
+            projectCard.appendChild(projectNameElement);
+    
+            const descriptionElement = document.createElement('p');
+            descriptionElement.textContent = description;
+            projectCard.appendChild(descriptionElement);
+    
+            const linkElement = document.createElement('a');
+            linkElement.textContent = 'View Project';
+            linkElement.href = link;
+            linkElement.target = '_blank'; // Open link in new tab
+            projectCard.appendChild(linkElement);
+    
+            container.appendChild(projectCard);
+        });
+    }
+    
+    // Example data for live projects
+    const liveProjectsData = [
+        { name: 'Project 1', image: 'project1.jpg', description: 'Description of Project 1', link: 'https://example.com/project1' },
+        { name: 'Project 2', image: 'project2.jpg', description: 'Description of Project 2', link: 'https://example.com/project2' },
+        { name: 'Project 1', image: 'project1.jpg', description: 'Description of Project 1', link: 'https://example.com/project1' },
+        { name: 'Project 2', image: 'project2.jpg', description: 'Description of Project 2', link: 'https://example.com/project2' }
+    ];
+    
+    // Example data for GitHub projects
+    const githubProjectsData = [
+        { name: 'Project 3', image: 'project3.jpg', description: 'Description of Project 3', link: 'https://github.com/username/project3' },
+        { name: 'Project 4', image: 'project4.jpg', description: 'Description of Project 4', link: 'https://github.com/username/project4' }
+    ];
+    
+    // Call the function to create project cards for live projects
+    createProjectCards(liveProjectsData, 'live-projects');
+    
+    // Call the function to create project cards for GitHub projects
+    createProjectCards(githubProjectsData, 'github-projects');
+    </script>
+
+<script>
+function createCompanyDivs(companies, containerId) {
+    const container = document.getElementById(containerId);
+
+    companies.forEach(company => {
+        const companyName = company.name;
+        const imageSrc = company.logo;
+        const description = company.description;
+        const role = company.role;
+
+        const companyDiv = document.createElement('div');
+        companyDiv.classList.add('company-div');
+
+        const logo = document.createElement('img');
+        logo.src = imageSrc;
+        logo.classList.add('company-logo');
+        companyDiv.appendChild(logo);
+
+        const companyNameElement = document.createElement('h3');
+        companyNameElement.textContent = companyName;
+        companyDiv.appendChild(companyNameElement);
+
+        const descriptionElement = document.createElement('p');
+        descriptionElement.textContent = description;
+        companyDiv.appendChild(descriptionElement);
+
+        const roleElement = document.createElement('p');
+        roleElement.classList.add('role');
+        roleElement.textContent = `Role: ${role}`;
+        companyDiv.appendChild(roleElement);
+
+        container.appendChild(companyDiv);
+    });
+}
+
+// Example data for companies
+const companiesData = [
+    { name: 'Company 1', logo: 'company1.jpg', description: 'Description of Company 1', role: 'Software Engineer' },
+    { name: 'Company 2', logo: 'company2.jpg', description: 'Description of Company 2', role: 'Product Manager' }
+];
+
+// Call the function to create company divs
+createCompanyDivs(companiesData, 'companies');
+</script>
 </html>
