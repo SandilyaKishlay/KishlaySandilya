@@ -94,11 +94,12 @@
     
     // Example data
     const techStackData = [
-        { name: 'HTML', percentage: 80 },
-        { name: 'CSS', percentage: 70 },
+        { name: 'HTML', percentage: 100 },
+        { name: 'CSS', percentage: 100 },
         { name: 'JavaScript', percentage: 85 },
-        { name: 'React', percentage: 75 },
-        { name: 'Node.js', percentage: 60 }
+        { name: 'Python', percentage: 75 },
+        { name: 'Django', percentage: 90 },
+        { name: 'Node.js', percentage: 40 },
     ];
     
     // Call the function with example data
@@ -143,16 +144,17 @@
     
     // Example data for live projects
     const liveProjectsData = [
-        { name: 'Project 1', image: 'project1.jpg', description: 'Description of Project 1', link: 'https://example.com/project1' },
-        { name: 'Project 2', image: 'project2.jpg', description: 'Description of Project 2', link: 'https://example.com/project2' },
-        { name: 'Project 1', image: 'project1.jpg', description: 'Description of Project 1', link: 'https://example.com/project1' },
-        { name: 'Project 2', image: 'project2.jpg', description: 'Description of Project 2', link: 'https://example.com/project2' }
+        { name: 'Signam.org', image: 'Images/signam.jpeg', description: 'signam.org is a platform dedicated to providing a cutting-edge auto-trading solution for individuals and organizations. Our platform offers a sophisticated trading algorithm that operates 24/7, allowing users to effortlessly engage in trading activities while they relax. Built with a focus on security, ease of use, and scalability, xsignam.org simplifies the trading process, providing users with a seamless and hassle-free experience.', link: 'https://signam.org' },
+        { name: 'Alphaedge.life', image: 'Images/alphaedge.jpeg', description: 'alphaedge.life is a real-time platform designed to provide clients with comprehensive trading data and statistics, showcasing the performance and effectiveness of our trading algorithm. With a focus on transparency and accuracy, alphaedge.life offers a detailed insight into the workings of our trading algorithm, empowering clients to make informed decisions and stay updated on market trends.', link: 'https://alphaedge.life' },
+        
     ];
     
     // Example data for GitHub projects
     const githubProjectsData = [
-        { name: 'Project 3', image: 'project3.jpg', description: 'Description of Project 3', link: 'https://github.com/username/project3' },
-        { name: 'Project 4', image: 'project4.jpg', description: 'Description of Project 4', link: 'https://github.com/username/project4' }
+        { name: 'ScientificAxis', image: 'Images/scientificaxes.jpeg', description: 'This API defines a base AxisRange class that represents a range of values on an axis. It has two attributes, start and stop, that define the start and end points of the range. It also has a transform attribute that is used to apply a non-linear transformation to the axis values.The LinearRange class is a subclass of AxisRange that defines a linear range of values. It does not have a transform attribute since a linear transformation is the default.', link: 'https://github.com/SandilyaKishlay/Scientific-axes' },
+        { name: 'MicroService based system', image: 'Images/microservice.jpeg', description: 'In this assignment, I build a microservices-based system that manages a simple e-commerce application. The system should handle user authentication, product management, and order processing. Emphasis will be placed on implementing concurrency control and ensuring the system can handle clustering for high availability.', link: 'https://github.com/SandilyaKishlay/MicroService-based-system' },
+        { name: 'Option-Chain data display', image: 'Images/datamining.jpeg', description: 'This repository contains a Django project for displaying Option Chain data fetched from an NSE (National Stock Exchange) Official Website. The web application presents the fetched data in a table format with different attributes for Call and Put options.',link:'https://github.com/SandilyaKishlay/-Option-Chain-Data-Display-using-Django' }
+
     ];
     
     // Call the function to create project cards for live projects
@@ -211,8 +213,8 @@ function createCompanyCarousel(companies, indicatorsId, innerId) {
         }
 
         const companiesData = [
-            { name: 'Company 1', logo: 'company1.jpg', description: 'Description of Company 1', role: 'Software Engineer' },
-            { name: 'Company 2', logo: 'company2.jpg', description: 'Description of Company 2', role: 'Product Manager' }
+            { name: 'Signam.org', logo: 'Images/signam.jpeg', description: 'Empower your trading journey with our AI-powered platform. We specialize in strategy-based trading solutions for index, commodity, and stock markets. With a focus on risk management, we ensure consistent returns while you relax. Join thousands of successful traders who trust our proven strategies.', role: 'Technical Developer' },
+            { name: 'Inovetic technologies', logo: 'Images/inovetic.jpeg', description: 'This is tech based company', role: 'Full-stack Developer' }
         ];
 
         createCompanyCarousel(companiesData, 'carousel-indicators', 'carousel-inner');
