@@ -261,6 +261,7 @@ body{
            .left-side img{
             width: 300px;
             opacity: 0.3;
+            display: none;
            }
            .left-side{
             width: 100%;
